@@ -1,5 +1,5 @@
 
 Hey. I'm Montelion.
-I like to translate stuff in Italian.
+I like to translate stuff.
 
 That's it.
