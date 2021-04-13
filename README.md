@@ -1,4 +1,6 @@
 # montylion.github.io
 
-In case you're wondering, I don't know what I'm doing.
-aastgvkdjsbhgvjfsdhfdhnadfbn
+I kinda know what I'm doing
+
+
+i guess
