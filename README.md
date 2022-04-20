@@ -1,6 +1,3 @@
-# montylion.github.io
+# ashmonty.github.io
 
-I kinda know what I'm doing
-
-
-i guess
+this is only here to redirect to my actual website, ignore
