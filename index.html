@@ -1,16 +1,19 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <script type="text/javascript">
-      window.location.replace("https://www.ashmonty.com");
-    </script>
+#!/bin/bash
 
-    <title>Redirecting...</title>
-  </head>
-  <body>
-    <p>
-      Redirecting... why are you even here? You should be looking at
-      <a href="https://www.ashmonty.com">https://www.ashmonty.com</a>
-    </p>
-  </body>
-</html>
+# Prune remote accounts that never interacted with a local user
+RAILS_ENV=production /home/mastodon/live/bin/tootctl accounts prune;
+
+# Remove remote statuses that local users never interacted with older than 4 days
+RAILS_ENV=production /home/mastodon/live/bin/tootctl statuses remove --days 4;
+
+# Remove media attachments older than 4 days
+RAILS_ENV=production /home/mastodon/live/bin/tootctl media remove --days 4;
+
+# Remove all headers (including people I follow)
+RAILS_ENV=production /home/mastodon/live/bin/tootctl media remove --remove-headers --include-follows --days 0;
+
+# Remove link previews older than 4 days
+RAILS_ENV=production /home/mastodon/live/bin/tootctl preview_cards remove --days 4;
+
+# Remove files not linked to any post
+RAILS_ENV=production /home/mastodon/live/bin/tootctl media remove-orphans;
